@@ -20,7 +20,7 @@ namespace EmailApp
         private void btnLogin_Click(object sender, EventArgs e)
         {
             
-            if (tbUser.Text == "mikamikictest12345@gmail.com" && tbPass.Text == "mikamika1")
+            if (tbUser.Text == "user" && tbPass.Text == "passw")
             {
                 frmEmail form1 = new frmEmail(this);
                 form1.Show();
@@ -30,11 +30,11 @@ namespace EmailApp
                 lbPoruka.Text = "";
                 
             }
-            else if (tbUser.Text == "mikamikictest12345@gmail.com" && tbPass.Text != "mikamika1")
+            else if (tbUser.Text == "user" && tbPass.Text != "passw")
             {
                 lbPoruka.Text = "Pogresna sifra!";
             }
-            else if (tbUser.Text == "peraperictest12345@gmail.com" && tbPass.Text == "perapera1")
+            else if (tbUser.Text == "user" && tbPass.Text == "passw")
             {
                 frmEmail form1 = new frmEmail(this);
                 form1.Show();
