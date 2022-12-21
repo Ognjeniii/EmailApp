@@ -1,0 +1,12 @@
+C:\Users\Ogi\source\repos\EmailApp\EmailApp\bin\Debug\EmailApp.exe.config
+C:\Users\Ogi\source\repos\EmailApp\EmailApp\bin\Debug\EmailApp.exe
+C:\Users\Ogi\source\repos\EmailApp\EmailApp\obj\Debug\EmailApp.csprojAssemblyReference.cache
+C:\Users\Ogi\source\repos\EmailApp\EmailApp\obj\Debug\EmailApp.frmEmail.resources
+C:\Users\Ogi\source\repos\EmailApp\EmailApp\obj\Debug\EmailApp.frmLogin.resources
+C:\Users\Ogi\source\repos\EmailApp\EmailApp\obj\Debug\EmailApp.Form3.resources
+C:\Users\Ogi\source\repos\EmailApp\EmailApp\obj\Debug\EmailApp.Properties.Resources.resources
+C:\Users\Ogi\source\repos\EmailApp\EmailApp\obj\Debug\EmailApp.csproj.GenerateResource.cache
+C:\Users\Ogi\source\repos\EmailApp\EmailApp\obj\Debug\EmailApp.csproj.CoreCompileInputs.cache
+C:\Users\Ogi\source\repos\EmailApp\EmailApp\obj\Debug\EmailApp.exe
+C:\Users\Ogi\source\repos\EmailApp\EmailApp\obj\Debug\EmailApp.pdb
+C:\Users\Ogi\source\repos\EmailApp\EmailApp\bin\Debug\EmailApp.pdb

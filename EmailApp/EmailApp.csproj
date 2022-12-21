@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62587AD8-71F0-4B9F-94A2-076BB7784031}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EmailApp</RootNamespace>
+    <AssemblyName>EmailApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZaposleniDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZaposleniDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZaposleniDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZaposleniDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZaposleniDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZaposleniDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZaposleniDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZaposleniDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZaposleniDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZaposleniDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZaposleniDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZaposleniDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZaposleniDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZaposleniDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZaposleniDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZaposleniDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZaposleniDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZaposleniDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZaposleniDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZaposleniDataSet9.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ZaposleniDataSet.xsc">
+      <DependentUpon>ZaposleniDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZaposleniDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZaposleniDataSet.xss">
+      <DependentUpon>ZaposleniDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet1.xsc">
+      <DependentUpon>ZaposleniDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZaposleniDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZaposleniDataSet1.xss">
+      <DependentUpon>ZaposleniDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet2.xsc">
+      <DependentUpon>ZaposleniDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZaposleniDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZaposleniDataSet2.xss">
+      <DependentUpon>ZaposleniDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet3.xsc">
+      <DependentUpon>ZaposleniDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZaposleniDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZaposleniDataSet3.xss">
+      <DependentUpon>ZaposleniDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet4.xsc">
+      <DependentUpon>ZaposleniDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZaposleniDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZaposleniDataSet4.xss">
+      <DependentUpon>ZaposleniDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet5.xsc">
+      <DependentUpon>ZaposleniDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZaposleniDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZaposleniDataSet5.xss">
+      <DependentUpon>ZaposleniDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet6.xsc">
+      <DependentUpon>ZaposleniDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZaposleniDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZaposleniDataSet6.xss">
+      <DependentUpon>ZaposleniDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet7.xsc">
+      <DependentUpon>ZaposleniDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZaposleniDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZaposleniDataSet7.xss">
+      <DependentUpon>ZaposleniDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet8.xsc">
+      <DependentUpon>ZaposleniDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZaposleniDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZaposleniDataSet8.xss">
+      <DependentUpon>ZaposleniDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet9.xsc">
+      <DependentUpon>ZaposleniDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="ZaposleniDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZaposleniDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZaposleniDataSet9.xss">
+      <DependentUpon>ZaposleniDataSet9.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
