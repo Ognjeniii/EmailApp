@@ -18,49 +18,18 @@ namespace EmailApp
             InitializeComponent();
         }
 
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-DETU8RQ\\SQLEXPRESS01;Initial Catalog=Zaposleni;Integrated Security=True");
-
+        SqlConnection con = new SqlConnection("connectionString"); // connection to a database
+        
+        // filling the table 
         private void Form3_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'zaposleniDataSet9.Log1' table. You can move, or remove it, as needed.
             this.log1TableAdapter.Fill(this.zaposleniDataSet9.Log1);
 
         }
-
+        
+        // mathod for deleting data from database
         private void btnObrisiBazu_Click(object sender, EventArgs e)
         {
-            //if (dataGridView1.Rows.Count == 0)
-            //{
-            //    MessageBox.Show("Nema nicega u logu!");
-            //}
-            //else
-            //{
-            //    if (dataGridView1.SelectedRows.Count == 0)
-            //    {
-            //        MessageBox.Show("Ni jedan red nije izabran!");
-            //    }
-            //    else
-            //    {
-            //        con.Open();
-            //        SqlCommand cmd = new SqlCommand("DELETE FROM Log1 WHERE MaticniBroj = @MatBr", con);
-            //        int selectedIndex = dataGridView1.SelectedRows[0].Index;
-            //        int MatBr = Convert.ToInt32(dataGridView1[0, selectedIndex].Value);
-            //        cmd.Parameters.Add("@MatBr", SqlDbType.Int).Value = MatBr;
-            //        try
-            //        {
-            //            cmd.ExecuteNonQuery();
-            //            dataGridView1.Rows.RemoveAt(selectedIndex);
-            //            MessageBox.Show("Uspesno obrisano!");
-            //        }
-            //        catch (Exception ee)
-            //        {
-            //            MessageBox.Show(ee.ToString());
-            //        }
-
-            //        con.Close();
-            //    }
-            //}
-
             if (dataGridView1.Rows.Count == 0)
             {
                 MessageBox.Show("Nema nicega u logu!");
@@ -90,6 +59,7 @@ namespace EmailApp
             }
         }
 
+        // method for getting the row by mouse clicking
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
