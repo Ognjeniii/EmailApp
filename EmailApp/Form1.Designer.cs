@@ -171,7 +171,7 @@
             this.tbZaSlanje.Name = "tbZaSlanje";
             this.tbZaSlanje.Size = new System.Drawing.Size(373, 22);
             this.tbZaSlanje.TabIndex = 18;
-            this.tbZaSlanje.Text = " C:\\\\Users\\\\Ogi\\\\Desktop\\\\Listici";
+            this.tbZaSlanje.Text = "folderPath";
             // 
             // tbPoslati
             // 
@@ -179,7 +179,7 @@
             this.tbPoslati.Name = "tbPoslati";
             this.tbPoslati.Size = new System.Drawing.Size(373, 22);
             this.tbPoslati.TabIndex = 18;
-            this.tbPoslati.Text = "C:\\\\Users\\\\Ogi\\\\Desktop\\\\Poslati";
+            this.tbPoslati.Text = "folderPath";
             // 
             // tbImePos
             // 
