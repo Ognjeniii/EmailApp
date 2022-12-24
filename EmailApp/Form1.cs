@@ -35,14 +35,15 @@ namespace EmailApp
         string email;
         string pass;
         List<string> listaNeuspesnihStringova = new List<string>();
-        string mika = "tnpifeidhbteoahv";
-        string pera = "ymntkzwlghwnozci";
-        string outPutPath = @"C:\Users\Ogi\Desktop\Poslati\";
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-DETU8RQ\\SQLEXPRESS01;Initial Catalog=Zaposleni;Integrated Security=True");
+        string mika = "generatedPasswordFromGmail1"; // less secure apss
+        string pera = "generatedPasswordFromGmail2"; // less secure apps
+        string outPutPath = "stringPath"; // path for folder where pdf files goes if they are sent
+        SqlConnection con = new SqlConnection("connectionString"); // connection with dataBase
         SqlCommand cmd1;
         public frmLogin form2;
         public string Value { get; set; }
-
+        
+        // method that complements listView
         private void Dopuni()
         {
             DataTable dt;
@@ -70,7 +71,8 @@ namespace EmailApp
 
             con.Close();
         }
-
+        
+        // method for "refreshing" listView after any action
         private void Ucitaj()
         {
             DataTable dt;
@@ -107,12 +109,14 @@ namespace EmailApp
 
             con.Close();
         }
-
+        
+        
+        // the method by which we enter feedback into the database.
         private void UpisiULog()
         {
             var br = lvPodaci.Items.Count;
-            DirectoryInfo info = new DirectoryInfo(@"C:\Users\Ogi\Desktop\Listici\");
-            DirectoryInfo info2 = new DirectoryInfo(@"C:\Users\Ogi\Desktop\Poslati\" + DateTime.Now.ToString("yyyy_MM_dd") + @"\");
+            DirectoryInfo info = new DirectoryInfo("stringPath"); // path to folder with pdf files
+            DirectoryInfo info2 = new DirectoryInfo("stringPath" + DateTime.Now.ToString("yyyy_MM_dd") + @"\"); // path to folder where pdf files goes if they are sent
             var files2 = info2.GetFiles();
             List<string> listaStringovaUPoslatim = new List<string>();
             List<int> listaIntovaUPoslatim = new List<int>();
@@ -143,7 +147,7 @@ namespace EmailApp
             }
 
 
-            // za one koji su uspesno poslati
+            // for the files which are sent successfully
             List<int> listaBazaIntovi = new List<int>();
             List<string> listaBazaStringovi = new List<string>();
             for (int i = 0; i < k; i++)
@@ -169,7 +173,7 @@ namespace EmailApp
                 cmd.ExecuteNonQuery();
             }
 
-            // za one koji nisu poslati, za koje ne postoji listic/mail
+            // for the files which are not sent successfully, no email adress in database
             List<int> listaNeuspenihIntova = new List<int>();
             listaNeuspenihIntova = listaIntova.Except(listaBazaIntovi).ToList();
             listaNeuspesnihStringova = listaStringova.Except(listaBazaStringovi).ToList();
@@ -189,21 +193,24 @@ namespace EmailApp
 
             con.Close();
         }
-
+        
+        // if "klinknuto" is true, in other method, we are calling sendAsyncCancel
         private void btnPrekiniSlanje_Click(object sender, EventArgs e)
         {
             kliknuto = true;
         }
-
+        
+        // form load
         private void Form1_Load(object sender, EventArgs e)
         {            
             tbAdresa.Text = f1.tbUser.Text;
             Ucitaj();
         }
-
+        
+        // the method which we fill the progress bar if all files are sent successfully
         private void ProgressBar()
         {
-            DirectoryInfo info = new DirectoryInfo(@"C:\Users\Ogi\Desktop\Listici");
+            DirectoryInfo info = new DirectoryInfo("stringPath"); // path to folder where pdf files are
             var files = info.GetFiles();
             int brojListica = 0;
             List<int> listaIntova = new List<int>();
@@ -232,6 +239,7 @@ namespace EmailApp
             }
         }
 
+        // the method for call back message
         private static void SendCompletedCallBack(object sender, AsyncCompletedEventArgs e)
         {
             //var token = (string)e.UserState;
@@ -250,16 +258,17 @@ namespace EmailApp
             mailSent = true;
         }
 
+        // the method for initialization message
         private MailMessage InitialiseMessage(string emailTo, string fileName)
         {
-            if (tbAdresa.Text == "peraperictest12345@gmail.com")
+            if (tbAdresa.Text == "emailAdress1")
             {
-                email = "peraperictest12345@gmail.com";
+                email = "emailAdress1";
                 pass = pera;
             }
-            else if (tbAdresa.Text == "mikamikictest12345@gmail.com")
+            else if (tbAdresa.Text == "emailAdress2")
             {
-                email = "mikamikictest12345@gmail.com";
+                email = "emailAdress2";
                 pass = mika;
             }
 
@@ -275,9 +284,10 @@ namespace EmailApp
             return msg;
         }
         
+        // method for sending a mail
         private async Task SendMail(MailMessage msg)
         {
-            DirectoryInfo directoryInfo = new DirectoryInfo(@"C:\Users\Ogi\Desktop\Listici");
+            DirectoryInfo directoryInfo = new DirectoryInfo("stringPath"); // path for folder where the pdf files are
             int brojListica = 0;
             var files = directoryInfo.GetFiles();
             List<int> listaIntova = new List<int>();
@@ -309,7 +319,8 @@ namespace EmailApp
                 client.SendCompleted += new SendCompletedEventHandler(SendCompletedCallBack);
             }
         }
-
+        
+        // the method for changing color of the text
         private void FormatText(RichTextBox richTextBox, string p, Color textColor, Color highColor)
         {
             string[] lines = richTextBox.Lines;
@@ -321,26 +332,27 @@ namespace EmailApp
             }
         }
 
+        // the method for calling other methods...Sending mails, moving pdf files to another folder, progres bar, database fill...
         private async void btnPosalji_Click(object sender, EventArgs e)
         {
             btnUnos.Enabled = false;
             btnIzmeni.Enabled = false;
             btnObrisi.Enabled = false;
             
-            if (tbAdresa.Text == "peraperictest12345@gmail.com")
+            if (tbAdresa.Text == "emailAdress1")
             {
-                email = "peraperictest12345@gmail.com";
+                email = "emailAdress1";
                 pass = pera;
             }
-            else if (tbAdresa.Text == "mikamikictest12345@gmail.com")
+            else if (tbAdresa.Text == "emailAdress2")
             {
-                email = "mikamikictest12345@gmail.com";
+                email = "emailAdress2";
                 pass = mika;
             }
 
             var br = lvPodaci.Items.Count;
 
-            DirectoryInfo info = new DirectoryInfo(@"C:\Users\Ogi\Desktop\Listici");
+            DirectoryInfo info = new DirectoryInfo("stringPath"); // path for folder where pdf files are
             var files = info.GetFiles();
             int ukupanBrListica = 0;
             List<int> lista = new List<int>();
@@ -404,7 +416,6 @@ namespace EmailApp
 
             UpisiULog();
 
-                // za ispis u richTextBox1
             if (kliknuto != true)
             { 
                 for (int i = 0; i < k; i++)
@@ -440,9 +451,10 @@ namespace EmailApp
             btnObrisi.Enabled = true;
         }
         
+        // the method for moving files in another folder
         private void MovePdf(string fileName)
         {
-            string sourceFolder = @"C:\Users\Ogi\Desktop\Listici\";
+            string sourceFolder = "stringPath"; // path for folder where pdf files are
             string destinationFolder = outPutPath + DateTime.Now.ToString("yyyy_MM_dd") + @"\";
             string nameOfFile = fileName;
             string sourceFile = Path.Combine(sourceFolder, nameOfFile);
@@ -459,7 +471,8 @@ namespace EmailApp
             File.Move(sourceFile, destinationFile);
             }
         }
-
+        
+        // method for entering new people into the database
         private void btnUnos_Click(object sender, EventArgs e)
         {
             
@@ -508,7 +521,8 @@ namespace EmailApp
                 
             }
         }
-
+        
+        // method for changing people's informations in a database
         private void btnIzmeni_Click(object sender, EventArgs e)
         {
             if (tbMatBroj.Text == "" || richTextBox1.Text == "" || tbIme.Text == "" || tbPrezime.Text == "" || tbImeR.Text == "" || tbJMBG.Text == "")
@@ -540,6 +554,7 @@ namespace EmailApp
             }
         }
 
+        // method for deleting people from database
         private void btnObrisi_Click(object sender, EventArgs e)
         {
             if (tbMatBroj.Text != "")
@@ -571,6 +586,7 @@ namespace EmailApp
             }
         }
 
+        // log out method
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             //btnLogOut.BackColor = Color.FromArgb(255, 0, 0);
@@ -579,11 +595,13 @@ namespace EmailApp
             //frm.Show();
         }
 
+        // exit application method
         private void btnIzadji_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        
+        // method for showing the log database, database with feedback
         private void btnLog_Click(object sender, EventArgs e)
         {
             Form3 frm3 = new Form3();
