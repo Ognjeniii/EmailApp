@@ -16,7 +16,9 @@ namespace EmailApp
         {
             InitializeComponent();
         }
-        
+       
+      
+        // Method for log in. By logging in, we know from which email the message is sent
         private void btnLogin_Click(object sender, EventArgs e)
         {
             
@@ -61,10 +63,13 @@ namespace EmailApp
             }
         }
 
+        // for * on password
         private void frmLogin_Load(object sender, EventArgs e)
         {
             tbPass.UseSystemPasswordChar = true;
-        }
+        } 
+        
+        // for * on password
         private void cbPass_CheckedChanged(object sender, EventArgs e)
         {
             if (cbPass.Checked)
