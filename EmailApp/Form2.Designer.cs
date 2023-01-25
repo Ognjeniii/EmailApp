@@ -73,7 +73,7 @@
             this.tbUser.Name = "tbUser";
             this.tbUser.Size = new System.Drawing.Size(240, 22);
             this.tbUser.TabIndex = 3;
-            this.tbUser.Text = "mikamikictest12345@gmail.com";
+            this.tbUser.Text = "";
             // 
             // tbPass
             // 
@@ -81,7 +81,7 @@
             this.tbPass.Name = "tbPass";
             this.tbPass.Size = new System.Drawing.Size(240, 22);
             this.tbPass.TabIndex = 4;
-            this.tbPass.Text = "mikamika1";
+            this.tbPass.Text = "";
             // 
             // lbPoruka
             // 
